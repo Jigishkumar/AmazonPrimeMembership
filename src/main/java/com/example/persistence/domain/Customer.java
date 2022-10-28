@@ -9,11 +9,11 @@ import javax.persistence.ManyToOne;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long CustomerId;
+    private Long CustomerId;
     private String CustomerName;
     private String CustomerAddress;
     private String CustomerEmail;
-    private long   CustomerPhone;
+    private Long   CustomerPhone;
     private String CustomerUsername;
     private String CustomerPassword;
     private String CustomerDOB;
@@ -82,7 +82,7 @@ public class Customer {
         this.membershiptype = membershiptype;
     }
 	public Customer(long customerId, String customerName, String customerAddress, String customerEmail,
-			long customerPhone, String customerUsername, String customerPassword, String customerDOB,
+			Long customerPhone, String customerUsername, String customerPassword, String customerDOB,
 			String customerPaymentType, MembershipType membershiptype) {
 		super();
 		CustomerId = customerId;
@@ -99,14 +99,6 @@ public class Customer {
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "Customer [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", CustomerAddress="
-				+ CustomerAddress + ", CustomerEmail=" + CustomerEmail + ", CustomerPhone=" + CustomerPhone
-				+ ", CustomerUsername=" + CustomerUsername + ", CustomerPassword=" + CustomerPassword + ", CustomerDOB="
-				+ CustomerDOB + ", CustomerPaymentType=" + CustomerPaymentType + ", membershiptype=" + membershiptype
-				+ "]";
 	}
     
 }

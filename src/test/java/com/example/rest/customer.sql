@@ -1,0 +1,1 @@
+insert into customer values ("Amitabh","Unitedkingdom","nathiya@gmail.com",12345678l,"greatlife1" ,"badlife","01012004","Mastercard");

@@ -25,14 +25,15 @@ package com.example.rest;
 	import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 	import org.springframework.test.web.servlet.MockMvc;
 
-import com.example.persistence.domain.Customer;
+	import com.example.persistence.domain.Customer;
+import com.example.persistence.domain.MembershipType;
 import com.fasterxml.jackson.core.JsonProcessingException;
 	import com.fasterxml.jackson.databind.ObjectMapper;
 	
 
 	@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 	@AutoConfigureMockMvc
-	@Sql(scripts = "classpath:customer-data.sql", executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
+	@Sql(scripts = "classpath:customer.sql", executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 	public class CustomerControllerIntegrationTest {
 
 		@Autowired
@@ -40,10 +41,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 		@Autowired
 		private ObjectMapper mapper;
+		
+		private Long temp=null;
+		
+		private final Customer TEST_Customer = new Customer(temp,"Nathiya","London","nathiya@gmail.com",12345678l,"suchagreatlife1" ,"easylife","01012002","VISA",new MembershipType());
 
-		private final Customer TEST_Customer = new Customer(null, "London", 01012002, "nathiya@gmail.com","Nathiya","easylife","VISA",12345678,"suchagreatlife1","prime");
-
-		private final Customer TEST_SAVED_Customer = new Customer(4L, "London", 01012002, "nathiya@gmail.com","Nathiya","easylife","VISA",12345678,"suchagreatlife1","prime");
+		private final Customer TEST_SAVED_Customer = new Customer(4,"Nathiya","London","nathiya@gmail.com",12345678l,"suchagreatlife1" ,"easylife","01012002","VISA",new MembershipType());
 
 		/*@Test
 		public void testCreate() throws JsonProcessingException, Exception {
