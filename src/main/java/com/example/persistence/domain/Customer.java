@@ -1,168 +1,115 @@
+
 package com.example.persistence.domain;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.Data;
-
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-
+import javax.persistence.ManyToOne;
 @Entity
-//@NoArgsConstructor
-//@AllArgsConstructor
-@Data
 public class Customer {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String Name;
-	private String Address;
-	private String Email;
-	private long Phone;
-	private String Username;
-	private String DOB;
-	private int MembershipTypeId;
-	private String PaymentType;
-
-
-@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
-@OnDelete(action = OnDeleteAction.CASCADE)
-//@JsonManagedReference
-@JsonIgnore
-private List<MembershipType> membershiptypes = new ArrayList<>();
-
-
-public String getName() {
-	return Name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long CustomerId;
+    private String CustomerName;
+    private String CustomerAddress;
+    private String CustomerEmail;
+    private long   CustomerPhone;
+    private String CustomerUsername;
+    private String CustomerPassword;
+    private String CustomerDOB;
+    private String CustomerPaymentType; 
+    
+    @ManyToOne
+    private MembershipType membershiptype;
+    public long getCustomerId() {
+        return CustomerId;
+    }
+    public void setCustomerId(long customerId) {
+        CustomerId = customerId;
+    }
+    public String getCustomerName() {
+        return CustomerName;
+    }
+    public void setCustomerName(String customerName) {
+        CustomerName = customerName;
+    }
+    public String getCustomerAddress() {
+        return CustomerAddress;
+    }
+    public void setCustomerAddress(String customerAddress) {
+        CustomerAddress = customerAddress;
+    }
+    public String getCustomerEmail() {
+        return CustomerEmail;
+    }
+    public void setCustomerEmail(String customerEmail) {
+        CustomerEmail = customerEmail;
+    }
+    public long getCustomerPhone() {
+        return CustomerPhone;
+    }
+    public void setCustomerPhone(long customerPhone) {
+        CustomerPhone = customerPhone;
+    }
+    public String getCustomerUsername() {
+        return CustomerUsername;
+    }
+    public void setCustomerUsername(String customerUsername) {
+        CustomerUsername = customerUsername;
+    }
+    public String getCustomerPassword() {
+        return CustomerPassword;
+    }
+    public void setCustomerPassword(String customerPassword) {
+        CustomerPassword = customerPassword;
+    }
+    public String getCustomerDOB() {
+        return CustomerDOB;
+    }
+    public void setCustomerDOB(String customerDOB) {
+        CustomerDOB = customerDOB;
+    }
+    public String getCustomerPaymentType() {
+        return CustomerPaymentType;
+    }
+    public void setCustomerPaymentType(String customerPaymentType) {
+        CustomerPaymentType = customerPaymentType;
+    }
+    public MembershipType getMembershiptype() {
+        return membershiptype;
+    }
+    public void setMembershiptype(MembershipType membershiptype) {
+        this.membershiptype = membershiptype;
+    }
+	public Customer(long customerId, String customerName, String customerAddress, String customerEmail,
+			long customerPhone, String customerUsername, String customerPassword, String customerDOB,
+			String customerPaymentType, MembershipType membershiptype) {
+		super();
+		CustomerId = customerId;
+		CustomerName = customerName;
+		CustomerAddress = customerAddress;
+		CustomerEmail = customerEmail;
+		CustomerPhone = customerPhone;
+		CustomerUsername = customerUsername;
+		CustomerPassword = customerPassword;
+		CustomerDOB = customerDOB;
+		CustomerPaymentType = customerPaymentType;
+		this.membershiptype = membershiptype;
+	}
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Customer [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", CustomerAddress="
+				+ CustomerAddress + ", CustomerEmail=" + CustomerEmail + ", CustomerPhone=" + CustomerPhone
+				+ ", CustomerUsername=" + CustomerUsername + ", CustomerPassword=" + CustomerPassword + ", CustomerDOB="
+				+ CustomerDOB + ", CustomerPaymentType=" + CustomerPaymentType + ", membershiptype=" + membershiptype
+				+ "]";
+	}
+    
 }
 
 
-public void setName(String name) {
-	Name = name;
-}
-
-
-public String getAddress() {
-	return Address;
-}
-
-
-public void setAddress(String address) {
-	Address = address;
-}
-
-
-public String getEmail() {
-	return Email;
-}
-
-
-public void setEmail(String email) {
-	Email = email;
-}
-
-
-public long getPhone() {
-	return Phone;
-}
-
-
-public void setPhone(long phone) {
-	Phone = phone;
-}
-
-
-public String getUsername() {
-	return Username;
-}
-
-
-public void setUsername(String username) {
-	Username = username;
-}
-
-
-public String getDOB() {
-	return DOB;
-}
-
-
-public void setDOB(String dOB) {
-	DOB = dOB;
-}
-
-
-public int getMembershipTypeId() {
-	return MembershipTypeId;
-}
-
-
-public void setMembershipTypeId(int membershipTypeId) {
-	MembershipTypeId = membershipTypeId;
-}
-
-
-public String getPaymentType() {
-	return PaymentType;
-}
-
-
-public void setPaymentType(String paymentType) {
-	PaymentType = paymentType;
-}
-
-
-public List<MembershipType> getMembershiptypes() {
-	return membershiptypes;
-}
-
-
-public void setMembershiptypes(List<MembershipType> membershiptypes) {
-	this.membershiptypes = membershiptypes;
-}
-
-
-public Customer(String name, String address, String email, long phone, String username, String dOB,
-		int membershipTypeId, String paymentType, List<MembershipType> membershiptypes) {
-	super();
-	Name = name;
-	Address = address;
-	Email = email;
-	Phone = phone;
-	Username = username;
-	DOB = dOB;
-	MembershipTypeId = membershipTypeId;
-	PaymentType = paymentType;
-	this.membershiptypes = membershiptypes;
-}
-
-
-public Customer() {
-	super();
-	// TODO Auto-generated constructor stub
-}
-
-
-@Override
-public String toString() {
-	return "Customer [Name=" + Name + ", Address=" + Address + ", Email=" + Email + ", Phone=" + Phone + ", Username="
-			+ Username + ", DOB=" + DOB + ", MembershipTypeId=" + MembershipTypeId + ", PaymentType=" + PaymentType
-			+ ", membershiptypes=" + membershiptypes + "]";
-}
-
-
-}
+    
