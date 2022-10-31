@@ -17,14 +17,14 @@ This is an AmazonPrimeMembership back-end system, created using Java Spring Boot
 
 ## Features
 
-+ MembershipTypes
+## MembershipTypes
 + Add membershiptype
 + View all membershiptypes
 + Update membershiptype
 + Delete membershiptype
 + View membershiptype by ID
 + View membershiptype by name
-+ Customers:
+## Customers
 + Add customer
 + View all customers
 + Update customer by ID
