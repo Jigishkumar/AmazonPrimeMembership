@@ -29,7 +29,7 @@ This is an AmazonPrimeMembership back-end system, created using Java Spring Boot
 + View all customers
 + Update customer by ID
 + Delete customer by ID
-+ View employee by ID
++ View customer by ID
 
 ## Project Structure
 
