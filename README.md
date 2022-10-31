@@ -4,40 +4,51 @@ created Jigishkumar Diwakar
 
 This is an AmazonPrimeMembership back-end system, created using Java Spring Boot, that could be linked to a front-end to make API calls to a customer database. It has various CRUD (Create, Read, Update, Delete) functionalities to maintain the system and keep it updated. It is split into two tables. A table for membershiptype and a table for customers. This system is designed for Amazon to make it more convenient for them store, update and maintain customer data as well as membershiptype data. This README provides an overview of its functionality as well as instructions on how to run it using Spring Boot.
 
-* Features
+## Tools
++ Eclipse IDE
++ Java
++ Maven
++ Spring Boot
++ MySQL
++ Postman
++  GitHub
 
-MembershipTypes
-Add membershiptype
-View all membershiptypes
-Update membershiptype
-Delete membershiptype
-View membershiptype by ID
-View membershiptype by name
-Customers:
-Add customer
-View all customers
-Update customer by ID
-Delete customer by ID
-View employee by ID
 
-* Project Structure
+
+## Features
+
++ MembershipTypes
++ Add membershiptype
++ View all membershiptypes
++ Update membershiptype
++ Delete membershiptype
++ View membershiptype by ID
++ View membershiptype by name
++ Customers:
++ Add customer
++ View all customers
++ Update customer by ID
++ Delete customer by ID
++ View employee by ID
+
+## Project Structure
 
 Below is an outline of the project structure:
 
 ![AmazonPrimeMembershipProject](https://user-images.githubusercontent.com/72922356/198732269-a68c5d9b-f374-4675-89fb-77a724c4f9ff.jpg)
 
-* Membershiptype
+## Membershiptype
 
-Below is an ERD diagram for the database tables:
+Below is an ERD diagram for the Membershiptypes tables:
 
 ![ERD diagram](https://user-images.githubusercontent.com/72922356/198735631-9a6eafab-e9fb-4cdc-9910-07387912a431.jpg)
 
-Execution using Postman - CRUD
+### Execution using Postman - CRUD
 
 
-* As you can see the tables can be linked together through the MembershipTypeID
+### As you can see the tables can be linked together through the MembershipTypeID
 
-* Execution using Postman - CRUD:
+###  Execution using Postman - CRUD:
 
 ![addCustomer](https://user-images.githubusercontent.com/72922356/198745349-d495ed77-0398-4d4a-bd86-519925044815.jpg)
 
@@ -56,7 +67,7 @@ Execution using Postman - CRUD
 
 ![deleteMembershipType](https://user-images.githubusercontent.com/72922356/198745801-83b9850e-3a3c-4abe-a54e-2279a349f694.jpg)
 
-* Executing on Spring Boot:
+## Executing on Spring Boot:
 
 Since this is a Spring Boot application it uses a TomCat server.
 The port number used is 8080, so make sure that port remains free.
@@ -66,7 +77,7 @@ Once you have opened the project, you can right click and there two was to run i
 
 After this you can run the CRUD operations using something like Postman as shown above.
 
-* Testing
+## Testing
 
 
 As you can see on the picture below, different types of tests were carried out on the functionality of the system and were pass.
